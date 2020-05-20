@@ -12,7 +12,7 @@ from .forms import UserLoginForm, UserRegisterForm
 # Create your views here.
 
 
-def login(request):
+def login_view(request):
     next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
     if form.is_valid():
