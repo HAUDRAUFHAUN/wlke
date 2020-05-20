@@ -14,7 +14,7 @@ from .forms import UserLoginForm, UserRegisterForm
 
 def login_view(request):
     next = request.GET.get('next')
-    form = UserLoginForm(request.POST or None)
+    form = UserLoginForm(data=request.POST or None)
     if form.is_valid():
         benutzername = form.cleaned_data.get('benutzername')
         passwort = form.cleaned_data.get('passwort')
@@ -28,4 +28,4 @@ def login_view(request):
         'form': form,
 
     }
-    return render(request, 'login.html', data)
+    return render(request, 'login.html', data,)
