@@ -34,7 +34,7 @@ class UserRegisterForm(forms.ModelForm):
     class Meta:
         model = Benutzer
         fields = [
-            'benutzername',
+            'username',
             'email',
             'email2',
             'passwort',
