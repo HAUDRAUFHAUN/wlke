@@ -11,13 +11,16 @@
     <title>wlke - Login </title>
   </head>
   <body>
+  <br>
+  <div class="container text-center">
   <h1 class="display-4">Login</h1> 
     <form method="POST">
     {% csrf_token %}
     {{form}}
     <br>
-    <input type="submit" class="btn btn-success"></input>
+    <input type="submit" class="btn btn-success" placeholder="Login"></input>
     </form>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
