@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import (
     authenticate,
-    get_user_model
+    get_user_model,
 )
 
 Benutzer = get_user_model()
@@ -30,7 +30,6 @@ class UserRegisterForm(forms.ModelForm):
     email = forms.EmailField(label='E-Mail Adresse')
     email2 = forms.EmailField(label='E-Mail Bestätigung')
     passwort = forms.CharField(widget=forms.PasswordInput)
-    passwort2 = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
         model = Benutzer
@@ -57,9 +56,6 @@ class UserRegisterForm(forms.ModelForm):
             raise forms.ValidationError('DieseE-Mail wurde bereits registriert!')
 
         return email
-
-        if passwort != passwort2:
-            raise forms.ValidationError('Passwörter müssen übereinstimmen!')
 
 
         
