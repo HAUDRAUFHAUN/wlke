@@ -5,7 +5,7 @@ from .models import Datei
 
 # Create your views here.
 
-@login_required
+
 def index(request):
     dateien = Datei.objects.all().order_by("name")
     frontend_data = {'dateien': dateien, }

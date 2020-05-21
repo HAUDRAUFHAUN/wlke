@@ -17,8 +17,8 @@
         <form method="POST" class="form-group">
             {% csrf_token %}
             {{ form | crispy }}
-            <button type="submit" class="btn btn-success">Login</button>
             <p>Du hast noch keinen Account? Erstelle einen <a href="/signup">hier</a>.
+            <button type="submit" class="btn btn-success">Login</button>
         </form>
     </div>
     <!-- Optional JavaScript -->
