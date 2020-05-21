@@ -21,6 +21,7 @@ from signup import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),
+    path('', include('django.contrib.auth.urls')),
     path('storage/', include('storage.urls')),
     path('signup/', v.signup, name='signup'),
 ]
