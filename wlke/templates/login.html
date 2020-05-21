@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+    <title>wlke - Login </title>
+  </head>
+  <body>
+  <br>
+  <div class="container text-center">
+  <h1 class="display-4 text-success">Login</h1>
+  <h6 class= "margin auto ">Bitte geben sie ihren Benutzernamen und das dazugehörige Passwort ein</h6> 
+    <form method="POST">
+    {% csrf_token %}
+    <br>
+    <div class="p-3 mb-2 bg-success text-white mr auto rounded-pill "> {{form}}</div>
+   
+    <br>
+    <br>
+    <input type="submit" class="btn btn-outline-success my-2 my-sm-0" placeholder=""></input>
+    </form>
+  </div>
+ 
+  </body>
+
+{% endblock %}
