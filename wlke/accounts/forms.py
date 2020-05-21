@@ -52,7 +52,7 @@ class UserRegisterForm(forms.ModelForm):
         email_qs = Benutzer.objects.filter(email=email)
 
         if email_qs.exists():
-            raise forms.ValidationError('DieseE-Mail wurde bereits registriert!')
+            raise forms.ValidationError('Diese E-Mail wurde bereits registriert!')
 
         return email
 
