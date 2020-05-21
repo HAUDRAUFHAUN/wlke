@@ -7,5 +7,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 def signup(response):
-    form = UserCreationForm
+    if response.method == "POST":
+        form = UserCreationForm(response.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserCreationForm
     return render(response, 'signup/signup.html', {'form': form})
