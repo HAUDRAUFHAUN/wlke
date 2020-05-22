@@ -11,15 +11,21 @@
     <title>Neuer Account</title>
   </head>
   <body>
-  <div class="container">
-  <br>
-    <h1 class="display-4">Registrierung</h1>
-
-    <form method="POST" class="form-group">
-        {% csrf_token %}
-        {{ form }}
-        <br>
-        <button type="submit" class="btn btn-success">Account erstellen</button>
+    <div class="container">
+   
+    <form method="POST" class="form-group mx-auto form-signin"  style="width: 600px">
+      <br>
+      <img class="mb-4 d-block mx-auto" src="\media\logo\Logo.jpg" alt="" width="140" height="140" >
+      <h1 class=" font-weight-normal mx-auto text-center">Registrierung</h1>
+      <br>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      {% csrf_token %}
+      {{ form }}
+      <br>
+      <br>
+      <button type="submit" class="btn btn-lg btn-outline-success btn-block">Account erstellen</button>
+      <br>
+      <br>
     </form>
     </div>
 
