@@ -13,13 +13,19 @@
   </head>
   <body>
     <div class="container">
-        <h1 class="display-4">Flieg in deine wlke</h1>
-        <form method="POST" class="form-group">
-            {% csrf_token %}
-            {{ form | crispy }}
-            <p>Du hast noch keinen Account? Erstelle einen <a href="/signup">hier</a>.
-            <button type="submit" class="btn btn-success">Login</button>
-        </form>
+      <form method="POST" class="form-group mx-auto form-signin"  style="width: 600px">
+        <br>
+        <img class="mb-4 d-block mx-auto" src="Logo.jpg" alt="" width="140" height="140" >
+        <h1 class="h3 mb-3 font-weight-normal text-center ">Anmelden</h1>
+        <h5 class=" font-weight-normal mx-auto text-center">Bitte Benutzernahmen und Passwort eingeben</h5>
+        <br>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        {% csrf_token %}
+        {{ form | crispy }}
+        <br>
+        <p class="text-center">Du hast noch keinen Account? Erstelle dir direkt einen <a href="/signup">hier</a>.
+        <button type="submit" class="btn btn-lg btn-outline-success btn-block">Anmelden</button>
+      </form>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
