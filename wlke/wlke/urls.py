@@ -18,6 +18,9 @@ from django.urls import path, include
 
 from signup import views as v
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),
@@ -25,3 +28,7 @@ urlpatterns = [
     path('storage/', include('storage.urls')),
     path('signup/', v.signup, name='signup'),
 ]
+
+if settings.DEBUG:  # new
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
