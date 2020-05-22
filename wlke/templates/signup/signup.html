@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +21,7 @@
       <br>
       <label for="inputEmail" class="sr-only">Email address</label>
       {% csrf_token %}
-      {{ form }}
+      {{ form | crispy }}
       <br>
       <br>
       <button type="submit" class="btn btn-lg btn-outline-success btn-block">Account erstellen</button>
