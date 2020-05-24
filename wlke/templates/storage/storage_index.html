@@ -9,7 +9,7 @@
 <a href="/logout" class="btn btn-danger">Logout</a>
 
 {% for datei in dateien %}
-<p class="lead">{{ datei.name }}</p>
+<p class="lead">{{ datei.name }} <a href="{{ datei.datei.url }}" class="btn btn-outline-warning">Download</a></p>
 {% endfor %}
 
 {% endblock %}
