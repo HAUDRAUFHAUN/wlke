@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 
 
 class Datei(models.Model):
-    benutzer = models.ForeignKey(User, on_delete=models.CASCADE)
+    benutzer = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="datei", null=True)
     datei = models.FileField()
     name = models.CharField(max_length=200)
 
