@@ -8,7 +8,7 @@
 <div class="container"></div>
 <a href="/logout" class="btn btn-danger">Logout</a>
 
-{% for datei in dateien %}
+{% for datei in user.datei.all %}
 <p class="lead">{{ datei.name }} <a href="{{ datei.datei.url }}" class="btn btn-outline-warning">Download</a></p>
 {% endfor %}
 
