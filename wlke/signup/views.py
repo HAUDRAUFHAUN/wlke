@@ -16,3 +16,6 @@ def signup(response):
     else:
         form = SignupForm
     return render(response, 'signup/signup.html', {'form': form})
+
+def logout(request):
+    return render(request, 'registration/logout.html')
