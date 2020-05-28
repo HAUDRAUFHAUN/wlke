@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('storage/', include('storage.urls')),
     path('signup/', v.signup, name='signup'),
+    path('outlogged/', v.logout, name='logou'),
 ]
 
 if settings.DEBUG:  # new
