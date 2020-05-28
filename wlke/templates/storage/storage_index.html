@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<h1 class="display-4">Dateien Index</h1>
+<h1 class="display-4">Dateien</h1>
 <div class="container"></div>
-<a href="/logout" class="btn btn-danger">Logout</a>
+
 <br>
 {% for datei in user.datei.all %}
 <p class="lead">{{ datei.name }} <a href="{{ datei.datei.url }}" class="btn btn-outline-warning">Download</a></p>
