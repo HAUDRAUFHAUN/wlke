@@ -7,6 +7,8 @@ from .models import Datei
 
 
 def index(request):
+    neue_datei = request.POST.get('datei')
+    print(neue_datei)
     dateien = Datei.objects.all().order_by("name")
     frontend_data = {'dateien': dateien, }
     return render(request, 'storage/storage_index.html', frontend_data)
