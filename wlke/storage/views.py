@@ -8,13 +8,13 @@ from .models import Datei
 
 
 def index(response):
-    
+
     if response.method == "POST":
         neue_datei = response.POST.get('datei')
         print(neue_datei)
-        t = Datei(datei=neue_datei,)
+        t = Datei(datei=neue_datei, name=str(
+            neue_datei),)
         t.save()
-        response.User.add(t)
         return HttpResponseRedirect("/storage")
 
     dateien = Datei.objects.all().order_by("name")
