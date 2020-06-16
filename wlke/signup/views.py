@@ -18,8 +18,13 @@ def signup(response):
         if form.is_valid():
             form.save()
 
-            benutzerdir = os.path.join(BASE_DIR, '/media/{{ form.username }}/')
-            os.mkdir(benutzerdir)
+            # Get nutzername to create user specific folder
+            nutzername = response.POST.get('username')
+            # print(nutzername)
+
+            benutzerdir = os.path.join(
+                BASE_DIR, './media/data/{{ nutzername }}/')
+            os.mkdir(path=benutzerdir)
 
             return redirect('/storage')
     else:
