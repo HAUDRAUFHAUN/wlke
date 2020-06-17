@@ -22,8 +22,11 @@ def signup(response):
             nutzername = response.POST.get('username')
             # print(nutzername)
 
-            benutzerdir = os.path.join(
-                BASE_DIR, './media/data/{{ nutzername }}/')
+            dir = os.path.join(
+                BASE_DIR, './media/data/')
+
+            benutzerdir = dir + nutzername + '/'
+            # print(benutzerdir)
             os.mkdir(path=benutzerdir)
 
             return redirect('/storage')
