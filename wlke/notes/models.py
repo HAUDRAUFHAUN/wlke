@@ -15,4 +15,4 @@ class Notiz(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Notizeb'
+        verbose_name_plural = 'Notizen'
