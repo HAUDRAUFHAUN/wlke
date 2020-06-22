@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'index',
     'storage',
     'signup',
+    'notes',
 ]
 
 MIDDLEWARE = [

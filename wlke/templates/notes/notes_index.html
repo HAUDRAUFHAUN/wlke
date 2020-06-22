@@ -4,23 +4,26 @@
   <h1 class="display-4 text-center">Notizen</h1>
 </div>
 
-<form method="POST">
+<form method="POST" name="note">
   {% csrf_token %}
   <div class="input-group input-groupm mb-3 p-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">Titel</span>
     </div>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" name="note-title">
   </div>
 
   <div class="input-group mb-3 p-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Notiz</span>
     </div>
-    <textarea class="form-control" type="text">  </textarea>
+    <textarea class="form-control" type="text" name="note-body">  </textarea>
   </div>
   <button class="btn btn-success" type="submit">Speichern</button>
 </form>
 <hr>
+{% for notiz in user.notiz.all %}
+<p class="lead">{{ notiz.titel }}</p>
+{% endfor %}
 
 {% endblock %}
