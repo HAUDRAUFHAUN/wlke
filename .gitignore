@@ -1,3 +1,4 @@
 /.vscode
 /.idea
-/wlke/db.sqlite3
+wlke/db.sqlite3
+wlke/notes/__pycache__/views.cpython-38.pyc
