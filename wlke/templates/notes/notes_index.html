@@ -1,22 +1,26 @@
-{% extends 'base_storage.html' %}
-
-{% block titel %}Notizen{% endblock %}
-
+{% extends 'base_storage.html' %} {% block titel %}Notizen{% endblock %} 
 {% block content %}
-    <div class="border border-success rounded p-3 mx-auto m-2 bg-light">
-        <h1 class="display-4 text-center">Notizen</h1>
-    </div>
-    <div class="input-group input-group-sm mb-3 p-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Titel</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-      </div>
-      
-    <div class="input-group mb-3 p-3">
+<div class="border border-success rounded p-3 mx-auto m-2 bg-light">
+  <h1 class="display-4 text-center">Notizen</h1>
+</div>
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="input-group input-groupm mb-3 p-3">
     <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">Notiz</span>
+      <span class="input-group-text" id="inputGroup-sizing-sm">Titel</span>
     </div>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input type="text" class="form-control">
+  </div>
+
+  <div class="input-group mb-3 p-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Notiz</span>
     </div>
+    <textarea class="form-control" type="text">  </textarea>
+  </div>
+  <button class="btn btn-success" type="submit">Speichern</button>
+</form>
+<hr>
+
 {% endblock %}
