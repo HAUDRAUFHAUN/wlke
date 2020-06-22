@@ -15,5 +15,5 @@ def index(request):
         note = Notiz(
             titel=notetitle, body=notebody)
         note.save()
-        print(note)
+        # print(note)
     return render(request, 'notes/notes_index.html')
