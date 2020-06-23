@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Notiz
 
 from django.contrib.auth.models import User
@@ -17,3 +17,11 @@ def index(request):
         note.save()
         # print(note)
     return render(request, 'notes/notes_index.html')
+
+
+def edit(request):
+    return HttpResponse(request, "Hier werden Notizen bearbeitet...")
+
+
+def view(request):
+    return HttpResponse(request, "Notiz anschauen")
