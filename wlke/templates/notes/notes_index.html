@@ -22,11 +22,13 @@
   <button class="btn btn-success" type="submit">Speichern</button>
 </form>
 <hr>
+<div class="card-columns">
 {% for notiz in user.notiz.all %}
 <!-- Hier bitte Bootstrap card -->
 <div class="card border-dark mb-3" style="max-width: 18rem;">
   <div class="card-header">
     <a href="#" class="badge badge-light"><ion-icon name="create-outline" style="font-size: 25px;"></ion-icon></a>
+    <a href="#" class="badge badge-light"><ion-icon name="archive-outline" style="font-size: 25px;"></ion-icon></a>
     <a href="#" class="badge badge-light"><ion-icon name="trash-outline" style="font-size: 25px; color:firebrick;"></ion-icon></a>
   </div>
   <div class="card-body">
@@ -35,5 +37,5 @@
   </div>
 </div>
 {% endfor %}
-
+</div>
 {% endblock %}
