@@ -13,7 +13,7 @@ def index(response):
         neue_datei = response.POST.get('datei')
         # print(neue_datei)
         user = response.user
-        t = Datei(benutzer=user, datei=neue_datei, name=str(
+        t = Datei(benutzer=user, benutzername=user, datei=neue_datei, name=str(
             neue_datei),)
         t.save()
         return HttpResponseRedirect("/storage")
