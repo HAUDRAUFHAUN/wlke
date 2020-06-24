@@ -12,7 +12,8 @@ def index(response):
     if response.method == "POST":
         neue_datei = response.POST.get('datei')
         # print(neue_datei)
-        t = Datei(datei=neue_datei, name=str(
+        user = response.user
+        t = Datei(benutzer=user, datei=neue_datei, name=str(
             neue_datei),)
         t.save()
         return HttpResponseRedirect("/storage")

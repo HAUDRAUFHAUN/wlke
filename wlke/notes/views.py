@@ -12,8 +12,9 @@ def index(request):
         notetitle = request.POST.get('note-title')
         notebody = request.POST.get('note-body')
         # print(notetitle + '  ' + notebody)
+        user = request.user
         note = Notiz(
-            titel=notetitle, body=notebody)
+            benutzer=user, titel=notetitle, body=notebody)
         note.save()
         # print(note)
     return render(request, 'notes/notes_index.html')
@@ -25,3 +26,7 @@ def edit(request):
 
 def view(request):
     return HttpResponse(request, "Notiz anschauen")
+
+
+def delete(request, note_id):
+    return HttpResponse(request, "Delete Note number" + str(note_id))

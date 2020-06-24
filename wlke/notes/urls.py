@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.index),
     path('edit/', views.edit),
     path('view/', views.view),
+    path('delete/<int:note_id>/', views.delete),
 ]
