@@ -14,7 +14,7 @@ def index(request):
         # print(notetitle + '  ' + notebody)
         user = request.user
         note = Notiz(
-            benutzer=user, titel=notetitle, body=notebody)
+            benutzer=user, titel=notetitle, body=notebody, archived=False,)
         note.save()
         # print(note)
     return render(request, 'notes/notes_index.html')
@@ -27,6 +27,8 @@ def edit(request, note_id):
 
 
 def archive(request, note_id):
+    note = Notiz.objects.all().filter(id=note_id)
+    note.update(archived=True)
     return HttpResponseRedirect('/notes/')
 
 

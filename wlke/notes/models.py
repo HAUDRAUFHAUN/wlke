@@ -11,6 +11,7 @@ class Notiz(models.Model):
         User, on_delete=models.CASCADE, related_name="notiz", null=True)
     titel = models.CharField(max_length=200)
     body = models.TextField()
+    archived = models.BooleanField(default=False)
 
     def __str__(self):
         return self.titel
