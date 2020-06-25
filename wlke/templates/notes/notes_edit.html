@@ -1,8 +1,10 @@
 {% extends 'base_storage.html' %} {% block titel %}{{note.titel}}{% endblock %} 
 {% block content %}
 <br>
+<h1 class="display-4">Bearbeite Notiz {{note.titel}}</h1>
+<br>
 <form method="POST">   
-    <input type="text" placeholder="{{note.titel}}"></input>
+    <input type="text" class="form-controll" placeholder="{{note.titel}}" name="note-titel"></input>
     <button type="submit" class="btn btn-success">Speichern</button>
 </form>
 {% endblock %}
