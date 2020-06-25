@@ -21,11 +21,12 @@ def index(request):
 
 
 def edit(request, note_id):
-    return HttpResponse(request, "Hier werden Notizen bearbeitet...")
+    note = Notiz.objects.all().filter(id=note_id)
+    return render(request, "notes/notes_edit.html", {"note": note, })
 
 
-def view(request, note_id):
-    return HttpResponse(request, "Notiz anschauen")
+def archive(request, note_id):
+    return HttpResponseRedirect('/notes/')
 
 
 def delete(request, note_id):
