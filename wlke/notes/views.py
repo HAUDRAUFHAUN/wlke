@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from .models import Notiz
 
 from django.contrib.auth.models import User
@@ -20,13 +20,16 @@ def index(request):
     return render(request, 'notes/notes_index.html')
 
 
-def edit(request):
+def edit(request, note_id):
     return HttpResponse(request, "Hier werden Notizen bearbeitet...")
 
 
-def view(request):
+def view(request, note_id):
     return HttpResponse(request, "Notiz anschauen")
 
 
 def delete(request, note_id):
-    return HttpResponse(request, "Delete Note number" + str(note_id))
+    note = Notiz.objects.all().filter(id=note_id)
+    note.delete()
+
+    return HttpResponseRedirect("/notes/")
