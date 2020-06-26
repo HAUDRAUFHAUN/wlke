@@ -1,20 +1,21 @@
 {% extends 'base_storage.html' %}
+{% load crispy_forms_tags %}
 
 {% block titel %}Dateien-Index{% endblock %}
 
 {% block content %}
 
 <div class="container text-center">
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <input name="datei" type="file"></input>
+    {{form | crispy }}
     <button type="submit" class="btn btn-outline-success m-3"><ion-icon name="cloud-upload" style="font-size: 32px;"></ion-icon><div class="container text-center">Datei hinzufügen</div></button>
 </form>
 </div>
 <hr>
 <br>
-{% for datei in user.datei.all %}
-<p class="lead">{{ datei.name }} <a href="{{ datei.datei.url }}" class="btn btn-outline-warning">Download</a></p>
+{% for datei in user.Datei.all %}
+    <p class="lead">{{ datei.name }} <a href="{{ datei.datei.url }}" class="btn btn-outline-warning">Download</a></p>
 {% endfor %}
 
 {% endblock %}

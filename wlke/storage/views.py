@@ -1,25 +1,23 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.files import File
+from django.core.files.storage import FileSystemStorage
+
 
 from .models import Datei
+from .forms import DateiForm
 
-# Create your views here.
 
+def index(request):
+    if request.method == 'POST':
+        form = DateiForm(request.POST, request.FILES, request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/storage/')
+    else:
+        form = DateiForm()
 
-def index(response):
-
-    if response.method == "POST":
-        neue_datei = response.POST.get('datei')
-        # print(neue_datei)
-        user = response.user
-        t = Datei(benutzer=user, benutzername=user, datei=neue_datei, name=str(
-            neue_datei),)
-
-        print
-        t.save()
-        return HttpResponseRedirect("/storage")
-
-    dateien = Datei.objects.all().order_by("name")
-    frontend_data = {'dateien': dateien, }
-    return render(response, 'storage/storage_index.html', frontend_data)
+    return render(request, 'storage/storage_index.html', {
+        'form': form,
+    })

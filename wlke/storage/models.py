@@ -9,7 +9,7 @@ class Datei(models.Model):
         User, on_delete=models.CASCADE, related_name="datei", null=True)
     benutzername = models.CharField(max_length=300, default='None')
     datei = models.FileField(
-        upload_to='data/'+str(benutzername.get_default)+'/',)
+        upload_to='data/adjkncvir1495kgsiqiy/', null=True, blank=True,)
     name = models.CharField(max_length=200)
 
     def __str__(self):
