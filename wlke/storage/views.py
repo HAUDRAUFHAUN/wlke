@@ -15,6 +15,8 @@ def index(response):
         user = response.user
         t = Datei(benutzer=user, benutzername=user, datei=neue_datei, name=str(
             neue_datei),)
+
+        print
         t.save()
         return HttpResponseRedirect("/storage")
 

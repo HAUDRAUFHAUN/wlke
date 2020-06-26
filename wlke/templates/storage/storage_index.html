@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="container text-center">
-<form method="post">
+<form method="POST">
     {% csrf_token %}
     <input name="datei" type="file"></input>
     <button type="submit" class="btn btn-outline-success m-3"><ion-icon name="cloud-upload" style="font-size: 32px;"></ion-icon><div class="container text-center">Datei hinzufügen</div></button>
