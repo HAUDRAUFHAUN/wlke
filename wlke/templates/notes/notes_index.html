@@ -1,25 +1,27 @@
 {% extends 'base_storage.html' %} {% block titel %}Notizen{% endblock %} 
 {% block content %}
-<div class="border border-success rounded p-3 mx-auto m-2 bg-light">
-  <h1 class="display-4 text-center">Notizen</h1>
+<div class="text-center">
+  <h1 class="text-center display-1">Notizen</h1>
 </div>
 
 <form method="POST" name="note">
   {% csrf_token %}
-  <div class="input-group input-groupm mb-3 p-3">
+  <div class="input-group input-groupm mb-3 w-75 p-3 mx-auto">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">Titel</span>
     </div>
     <input type="text" class="form-control" name="note-title">
   </div>
 
-  <div class="input-group mb-3 p-3">
+  <div class="input-group mb-3 w-75 p-3 mx-auto">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Notiz</span>
     </div>
     <textarea class="form-control" type="text" name="note-body">  </textarea>
   </div>
-  <button class="btn btn-success" type="submit">Speichern</button>
+  <div class="text-center">
+    <button class="btn btn-success pl-5 pr-5 pt-2 pb-2" type="submit">Speichern</button>
+  </div>
 </form>
 <hr>
 <div class="card-columns">
@@ -27,7 +29,7 @@
 <!-- Hier bitte Bootstrap card -->
 {% if notiz.archived %}
 {% else %}
-<div class="card border-dark mb-3" style="max-width: 18rem;">
+<div class="card border-dark mx-auto m-5" style="max-width: 18rem;">
   <div class="card-header">
     <a href="/notes/edit/{{notiz.id}}" class="badge badge-light"><ion-icon name="create-outline" style="font-size: 25px;"></ion-icon></a>
     <a href="/notes/archive/{{notiz.id}}" class="badge badge-light"><ion-icon name="archive-outline" style="font-size: 25px;"></ion-icon></a>
