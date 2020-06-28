@@ -7,9 +7,11 @@
 
 <div class="container text-center">
 <form method="POST" enctype="multipart/form-data">
+    <br>
     {% csrf_token %}
+    <br>
     {{form | crispy }}
-    <button type="submit" class="btn btn-outline-success m-3"><ion-icon name="cloud-upload" style="font-size: 32px;"></ion-icon><div class="container text-center">Datei hinzufügen</div></button>
+    <button type="submit" class="btn btn-outline-primary m-3"><ion-icon name="cloud-upload" style="font-size: 32px;"></ion-icon><div class="container text-center">Datei hinzufügen</div></button>
 </form>
 </div>
 <hr>

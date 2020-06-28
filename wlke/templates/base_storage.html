@@ -34,6 +34,7 @@
         <a class="btn btn-danger " href="/logout">Logout</a>
       </div>
     </nav>
+    
     <div class="container">
 {% if user.is_authenticated %}
   {% block content %}
@@ -46,7 +47,8 @@
     
   {% endif %}  
 </div>
-
+<div class="p-2 mb-2 bg-primary text-white text-center ml-3 mr-3 rounded">© 2020 | Wlke CLoud Solution
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
