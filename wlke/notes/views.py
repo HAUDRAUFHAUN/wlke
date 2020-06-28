@@ -29,6 +29,12 @@ def edit(request, note_id):
 def archive(request, note_id):
     note = Notiz.objects.all().filter(id=note_id)
     note.update(archived=True)
+    return HttpResponseRedirect('/notes/archived')
+
+
+def dearchive(request, note_id):
+    note = Notiz.objects.all().filter(id=note_id)
+    note.update(archived=False)
     return HttpResponseRedirect('/notes/')
 
 
@@ -37,3 +43,7 @@ def delete(request, note_id):
     note.delete()
 
     return HttpResponseRedirect("/notes/")
+
+
+def archived(request):
+    return render(request, "notes/notes_archived.html")

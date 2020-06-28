@@ -13,7 +13,8 @@ def index(request):
     if request.method == 'POST':
         form = DateiForm(request.POST, request.FILES, request.user)
         if form.is_valid():
-            form.save()
+            formfile = Datei(benutzer=request.user,
+                             datei=form.datei, name=form.name)
             return redirect('/storage/')
     else:
         form = DateiForm()
