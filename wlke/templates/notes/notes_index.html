@@ -1,5 +1,17 @@
 {% extends 'base_storage.html' %} {% block titel %}Notizen{% endblock %} 
 {% block content %}
+<br>
+<!--Bootstrap Navigation-->
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="/notes/">Notizen</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/notes/archived/">Archivierte Notizen</a>
+  </li>
+  <br>
+</ul>
+
 <div class="text-center">
   <h1 class="text-center display-1">Notizen</h1>
 </div>

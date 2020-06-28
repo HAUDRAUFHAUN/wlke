@@ -1,26 +1,37 @@
 {% extends 'base_storage.html' %} {% block titel %}Notizen{% endblock %} 
 {% block content %}
-<div class="border border-success rounded p-3 mx-auto m-2 bg-light">
-  <h1 class="display-4 text-center">Archivierte Notizen</h1>
-</div>
+<br>
+<!--Bootstrap Navigation-->
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" href="/notes/">Notizen</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/notes/archived/">Archivierte Notizen</a>
+  </li>
+  <br>
+</ul>
+
+<h1 class="display-4 text-center">Archivierte Notizen</h1>
+
 <br>
 <div class="card-columns">
-{% for notiz in user.notiz.all %}
-<!-- Hier bitte Bootstrap card -->
-{% if notiz.archived %}
+  {% for notiz in user.notiz.all %}
+    <!-- Bootstrap carddeck -->
+    {% if notiz.archived %}
 
-<div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">
-    <a href="/notes/edit/{{notiz.id}}" class="badge badge-light"><ion-icon name="create-outline" style="font-size: 25px;"></ion-icon></a>
-    <a href="/notes/archive/{{notiz.id}}" class="badge badge-light"><ion-icon name="archive-outline" style="font-size: 25px;"></ion-icon></a>
-    <a href="/notes/delete/{{notiz.id}}/" class="badge badge-light"><ion-icon name="trash-outline" style="font-size: 25px; color:firebrick;"></ion-icon></a>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{ notiz.titel }}</h5>
-    <p class="card-text">{{ notiz.body }}</p>
-  </div>
-  {% endif %}
-</div>
-{% endfor %}
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <a href="/notes/edit/{{notiz.id}}" class="badge badge-light"><ion-icon name="create-outline" style="font-size: 25px;"></ion-icon></a>
+          <a href="/notes/dearchive/{{notiz.id}}" class="badge badge-light"><ion-icon name="archive-outline" style="font-size: 25px;"></ion-icon></a>
+          <a href="/notes/delete/{{notiz.id}}/" class="badge badge-light"><ion-icon name="trash-outline" style="font-size: 25px; color:firebrick;"></ion-icon></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ notiz.titel }}</h5>
+          <p class="card-text">{{ notiz.body }}</p>
+        </div>
+      </div>
+    {% endif %}     
+  {% endfor %}
 </div>
 {% endblock %}
