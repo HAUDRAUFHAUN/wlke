@@ -1,11 +1,11 @@
-{% extends 'base_storage.html' %} {% block titel %}{{note.titel}}{% endblock %} 
+{% extends 'base_storage.html' %} {% block titel %} {{notiz.titel}}{% endblock %} 
 {% block content %}
 <br>
-<h1 class="text-center display-1">Bearbeite Notiz {{note.titel}}</h1>
+<h1 class="text-center display-3 mx-auto">Bearbeite Notiz {{notiz.titel}}</h1>
 <br>
-<form method="POST" class="text-center">   
-    <input type="text" class="form-controll" placeholder="{{note.titel}}" name="note-titel" ></input>
+<form method="POST" class="text-center mx-auto">   
+    <input type="text" class="form-controll" placeholder="{{Notiz.objects.all}}" name="note-titel" ></input>
     <br>
-    <button type="submit" class="btn btn-success m-2" >Speichern</button>
+    <button type="submit" class="btn btn-success mt-3 mr-2 ml-2 mb-2" >Speichern</button>
 </form>
 {% endblock %}
