@@ -22,12 +22,14 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link m-2" href="http://127.0.0.1:8000/">Home <span class="sr-only">(current)</span></a>
+          
         </li>
+        <a class="nav-link m-2" href="http://127.0.0.1:8000/impressum">Impressum <span class="sr-only">(current)</span></a>
         <!--Einfügen eines Abstandes um die knöpfe rechts auszurichten-->
         <div class="col-md-8"></div>
         <div class="col-md-8"></div>
-        <div class="col-md-8"></div>
         <div class="col-md-4"></div>
+        <div class="col-md-0"></div>
         
         <!--Weiterführung des Normalen Codes-->
         <li class="nav-item float-right">
@@ -45,11 +47,13 @@
   <br>
     {% block content %}
     {% endblock %}
-    <footer class="bg-primary text-white text-center rounded"  style="position: fixed; left: 0; bottom: 0; width: 100%;">
+    <footer class="bg-primary text-white text-center p-2 mb-3 mt-2" style="position: fixed; left: 0; bottom: 0; padding-right: 2; width: 100%;">
       © 2020 | Wlke Cloud Solution |
-      <a class="text-white " href="/impressum/">   Impressum </a>|
+      <a class="text-white " href="/impressum/">   Impressum |</a>
       <a class="text-white " href="/login/">   Login  </a>
     </footer>
+    
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

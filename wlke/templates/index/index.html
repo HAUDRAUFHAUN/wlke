@@ -2,41 +2,42 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="jumbotron">
-        <h1 class="display-4">{{ jumbo_data.titel }}</h1>
-        <p class="lead">{{ jumbo_data.untertitel }}</p>
-        <hr class="my-4">
-        <a class="btn btn-primary btn-lg" href="/jumbo/{{ jumbo_data.pk }}" role="button">Details</a>
-  </div>
-    
-    <p class="lead">Herzlich Wilkommen auf der Website von wlke!</p>
-
-    <div class="container text-center">
+  <div class="container">
+    <div class="jumbotron">
+          <h1 class="display-4">{{ jumbo_data.titel }}</h1>
+          <p class="lead">{{ jumbo_data.untertitel }}</p>
+          <hr class="my-4">
+          <a class="btn btn-primary btn-lg" href="/jumbo/{{ jumbo_data.pk }}" role="button">Details</a>
+    </div>
       
-      <div class="row">
-        
-        <div class="col-sm">
-          <ion-icon name="logo-github" style="font-size: 128px;"></ion-icon>
-          <br>
-          <a href="https://github.com/HAUDRAUFHAUN/wlke" class="btn btn-info mt-5 mb-5">Das Projekt auf GitHub</a>
-        </div>
-    
-   
+      <p class="lead">Herzlich Wilkommen auf der Website von wlke!</p>
 
-        <div class="col-sm">
-          <ion-icon name="person-add-outline" style="font-size: 128px;"></ion-icon>
-          <br>
-          <a href="/signup" class="btn btn-info mt-5 mb-5">Registrieren</a>
-        </div>
+      <div class="container text-center">
+        
+        <div class="row">
+          
+          <div class="col-sm">
+            <ion-icon name="logo-github" style="font-size: 128px;"></ion-icon>
+            <br>
+            <a href="https://github.com/HAUDRAUFHAUN/wlke" class="btn btn-info mt-5 mb-5">Das Projekt auf GitHub</a>
+          </div>
+      
     
-        <div class="col-sm">
-          <ion-icon name="log-in-outline" style="font-size: 128px;"></ion-icon>
-          <br>
-          <a href="/login" class="btn btn-info mt-5 mb-5">Login</a>
+
+          <div class="col-sm">
+            <ion-icon name="person-add-outline" style="font-size: 128px;"></ion-icon>
+            <br>
+            <a href="/signup" class="btn btn-info mt-5 mb-5">Registrieren</a>
+          </div>
+      
+          <div class="col-sm">
+            <ion-icon name="log-in-outline" style="font-size: 128px;"></ion-icon>
+            <br>
+            <a href="/login" class="btn btn-info mt-5 mb-5">Login</a>
+          </div>
         </div>
+        <br><br><br>
       </div>
-  </div>
 
  
 
