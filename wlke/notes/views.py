@@ -21,9 +21,8 @@ def index(request):
 
 
 def edit(request, note_id):
-    note = Notiz.objects.all().filter(id=note_id)
-    print(note)
-    return render(request, "notes/notes_edit.html", {"note": note, })
+    frontend_data = {'note_id': note_id}
+    return render(request, "notes/notes_edit.html", frontend_data)
 
 
 def archive(request, note_id):

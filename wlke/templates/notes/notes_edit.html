@@ -1,11 +1,16 @@
-{% extends 'base_storage.html' %} {% block titel %} {{notiz.titel}}{% endblock %} 
+{% extends 'base_storage.html' %} {% block titel %}Bearbeite Notiz{% endblock %} 
 {% block content %}
 <br>
-<h1 class="text-center display-3 mx-auto">Bearbeite Notiz {{notiz.titel}}</h1>
-<br>
-<form method="POST" class="text-center mx-auto">   
-    <input type="text" class="form-controll" placeholder="{{Notiz.objects.all}}" name="note-titel" ></input>
-    <br>
-    <button type="submit" class="btn btn-success mt-3 mr-2 ml-2 mb-2" >Speichern</button>
-</form>
+{% for note in user.notiz.all %}
+    {% if note.id == note_id %}
+        <h1 class="text-center display-3 mx-auto">Bearbeite Notiz {{note.titel}}</h1>
+        <br>
+        <form method="POST" class="text-center mx-auto">   
+            <input type="text" class="form-controll" placeholder="{{note.title}}" name="note-titel" ></input>
+            <br>
+            <button type="submit" class="btn btn-success mt-3 mr-2 ml-2 mb-2" >Speichern</button>
+        </form>
+    {% else %}
+    {% endif %}
+{% endfor %}
 {% endblock %}
