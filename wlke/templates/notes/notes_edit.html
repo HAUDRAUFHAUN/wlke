@@ -6,9 +6,12 @@
         <h1 class="text-center display-3 mx-auto">Bearbeite Notiz {{note.titel}}</h1>
         <br>
         <form method="POST" class="text-center mx-auto">   
-            <input type="text" class="form-controll" placeholder="{{note.title}}" name="note-titel" ></input>
-            <br>
-            <button type="submit" class="btn btn-success mt-3 mr-2 ml-2 mb-2" >Speichern</button>
+            <div class="form-group">
+                <label for="note-titel">Titel</label>
+                <input type="text" class="form-control" placeholder="Titel" name="note-titel"  id="note-titel">{{note.titel}}</input>
+                <br>
+                <button type="submit" class="btn btn-success mt-3 mr-2 ml-2 mb-2" >Speichern</button>
+            </div>
         </form>
     {% else %}
     {% endif %}
