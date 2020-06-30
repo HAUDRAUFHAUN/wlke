@@ -7,7 +7,7 @@
 &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
 &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ module_name }}</a>
 &rsaquo; <a href="{% url opts|admin_urlname:'change' object.pk|admin_urlquote %}">{{ object|truncatewords:"18" }}</a>
-&rsaquo; {% trans 'History' %}
+&rsaquo; {% trans 'Änderungs Verlauf' %}
 </div>
 {% endblock %}
 
@@ -19,9 +19,9 @@
     <table id="change-history">
         <thead>
         <tr>
-            <th scope="col">{% trans 'Date/time' %}</th>
-            <th scope="col">{% trans 'User' %}</th>
-            <th scope="col">{% trans 'Action' %}</th>
+            <th scope="col">{% trans 'Datum/Zeit' %}</th>
+            <th scope="col">{% trans 'Benutzer' %}</th>
+            <th scope="col">{% trans 'Änderungen' %}</th>
         </tr>
         </thead>
         <tbody>
@@ -35,7 +35,7 @@
         </tbody>
     </table>
 {% else %}
-    <p>{% trans 'This object doesn’t have a change history. It probably wasn’t added via this admin site.' %}</p>
+    <p >{% trans 'Es wurden keine Änderungen gefunden, diese Notiz wurde nicht über die Admin Seite Erstellt.' %}</p>
 {% endif %}
 </div>
 </div>
