@@ -21,8 +21,12 @@ Dateien-Index {% endblock %} {% block content %}
 </div>
 <hr />
 <br />
-{% for datei in user.Datei.all %}
+
+{% for datei in user.datei.all %}
 <p class="lead">
   {{ datei.name }}
+  <a name="" id="" class="btn btn-success" href="{{datei.datei.url}}"
+    >DOWNLOAD</a
+  >
 </p>
 {% endfor %} {% endblock %}

@@ -12,11 +12,6 @@ def index(request):
     if request.method == 'POST' and request.FILES['file']:
         print(request.FILES)
         file = request.FILES['file']
-
-        fs = FileSystemStorage()
-        filename = fs.save(file.name, file)
-        uploaded_file_url = fs.url(filename)
-
         new_datei = Datei(benutzer=request.user, datei=file, name=file.name)
         new_datei.save()
         return HttpResponseRedirect('/storage/')
