@@ -21,6 +21,8 @@ def index(request):
 
 
 def edit(request, note_id):
+    if request.method == "POST":
+        print(request.POST)
     frontend_data = {'note_id': note_id}
     return render(request, "notes/notes_edit.html", frontend_data)
 
