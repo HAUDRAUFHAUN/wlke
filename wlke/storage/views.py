@@ -3,22 +3,21 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.files import File
 from django.core.files.storage import FileSystemStorage
-
+from django.conf import settings
 
 from .models import Datei
-from .forms import DateiForm
 
 
 def index(request):
-    if request.method == 'POST':
-        form = DateiForm(request.POST, request.FILES, request.user)
-        if form.is_valid():
-            formfile = Datei(benutzer=request.user,
-                             datei=form.datei, name=form.name)
-            return redirect('/storage/')
-    else:
-        form = DateiForm()
+    if request.method == 'POST' and request.FILES['file']:
+        print(request.FILES)
+        file = request.FILES['file']
 
-    return render(request, 'storage/storage_index.html', {
-        'form': form,
-    })
+        fs = FileSystemStorage()
+        filename = fs.save(file.name, file)
+        uploaded_file_url = fs.url(filename)
+
+        new_datei = Datei(benutzer=request.user, datei=file, name=file.name)
+        new_datei.save()
+        return HttpResponseRedirect('/storage/')
+    return render(request, 'storage/storage_index.html',)

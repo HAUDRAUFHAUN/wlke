@@ -1,23 +1,28 @@
-{% extends 'base_storage.html' %}
-{% load crispy_forms_tags %}
-
-{% block titel %}Dateien-Index{% endblock %}
-
-{% block content %}
+{% extends 'base_storage.html' %} {% load crispy_forms_tags %} {% block titel %}
+Dateien-Index {% endblock %} {% block content %}
 
 <div class="container text-center">
-<form method="POST" enctype="multipart/form-data">
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <br>
-    {{form | crispy }}
-    <button type="submit" class="btn btn-outline-primary m-3"><ion-icon name="cloud-upload" style="font-size: 32px;"></ion-icon><div class="container text-center">Datei hinzufügen</div></button>
-</form>
+    <br />
+    <div class="custom-file mb-3">
+      <input type="file" name="file" class="custom-file-input" required />
+      <label class="custom-file-label" for="validatedCustomFile"
+        >Datei wählen...</label
+      >
+      <div class="invalid-feedback">ungültige Eingabe</div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-primary m-3">
+      <ion-icon name="cloud-upload" style="font-size: 32px;"></ion-icon>
+      <div class="container text-center">Datei hinzufügen</div>
+    </button>
+  </form>
 </div>
-<hr>
-<br>
+<hr />
+<br />
 {% for datei in user.Datei.all %}
-    <p class="lead">{{ datei.name }} <a href="{{ datei.datei.url }}" class="btn btn-outline-warning">Download</a></p>
-{% endfor %}
-
-{% endblock %}
-
+<p class="lead">
+  {{ datei.name }}
+</p>
+{% endfor %} {% endblock %}
