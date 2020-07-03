@@ -10,6 +10,7 @@ class Datei(models.Model):
     datei = models.FileField(
         upload_to='data/adjkncvir1495kgsiqiy/', null=True, blank=True,)
     name = models.CharField(max_length=200)
+    uploaded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
