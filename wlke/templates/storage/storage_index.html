@@ -5,11 +5,13 @@ Dateien-Index {% endblock %} {% block content %}
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <br />
-    <div class="custom-file mb-3">
-      <input type="file" name="file" class="custom-file-input" required />
+    <div class="custom-file mb-3" style="width: 400px">
+      <input type="file" name="file" class="custom-file-input " required />
       <label class="custom-file-label" for="validatedCustomFile"
-        >Datei wählen...</label
-      >
+        >Datei wählen...</label>
+        <label class="custom-file-label" for="validatedCustomFile"
+        >Datei wählen...</label>
+      
       <div class="invalid-feedback">ungültige Eingabe</div>
     </div>
     <br />
@@ -19,14 +21,14 @@ Dateien-Index {% endblock %} {% block content %}
     </button>
   </form>
 </div>
-<hr />
+
 <br />
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">hochgeladen</th>
+      <th scope="col">Hochgeladen am:</th>
       <th scope="col">Download</th>
     </tr>
   </thead>
@@ -38,7 +40,7 @@ Dateien-Index {% endblock %} {% block content %}
       </td>
       <td>{{ datei.uploaded }}</td>
       <td>
-        <a name="" id="" class="btn btn-success" href="{{datei.datei.url}}"
+        <a name="" id="" class="btn btn-outline-primary" href="{{datei.datei.url}}"
           >DOWNLOAD</a
         >
       </td>
