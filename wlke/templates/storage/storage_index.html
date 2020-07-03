@@ -22,11 +22,29 @@ Dateien-Index {% endblock %} {% block content %}
 <hr />
 <br />
 
-{% for datei in user.datei.all %}
-<p class="lead">
-  {{ datei.name }}
-  <a name="" id="" class="btn btn-success" href="{{datei.datei.url}}"
-    >DOWNLOAD</a
-  >
-</p>
-{% endfor %} {% endblock %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">hochgeladen</th>
+      <th scope="col">Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for datei in user.datei.all %}
+    <tr>
+      <td>
+        {{ datei.name }}
+      </td>
+      <td>{{ datei.uploaded }}</td>
+      <td>
+        <a name="" id="" class="btn btn-success" href="{{datei.datei.url}}"
+          >DOWNLOAD</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
