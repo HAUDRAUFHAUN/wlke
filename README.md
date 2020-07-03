@@ -17,3 +17,6 @@ To test this project, simpy clone it an navigate into the wlke folder. If you ar
 3. on Windows (Git Bash) and MacOS type in your terminal `source env/Scripts/activate`
 4. then enter the command `pip installl -r requirements.txt`
 5. Now you can select in the open folder in VS Code the virtual-enviroment `env` as python-interpreter
+
+## security
+This project is actually in the development stage. This means, that it isn't suitable for production. But if you use it now in production, we don't guarantee for the security and the whole functionallity of the project and we don't give you any liability.
