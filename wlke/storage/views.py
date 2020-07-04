@@ -16,3 +16,9 @@ def index(request):
         new_datei.save()
         return HttpResponseRedirect('/storage/')
     return render(request, 'storage/storage_index.html',)
+
+
+def delete(request, file_id):
+    file = Datei.objects.all().filter(id=file_id)
+    file.delete()
+    return HttpResponseRedirect('/storage/')
