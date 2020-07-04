@@ -38,7 +38,7 @@ Dateien-Index {% endblock %} {% block content %}
   </thead>
   <tbody>
     {% for datei in user.datei.all %}
-    <tr>
+    <tr data-href="{{ datei.datei.url }}">
       <td>
         {{ datei.name }}
       </td>
