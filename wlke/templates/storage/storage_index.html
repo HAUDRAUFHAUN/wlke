@@ -5,13 +5,15 @@ Dateien-Index {% endblock %} {% block content %}
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <br />
-    <div class="custom-file mb-3" style="width: 400px">
-      <input type="file" name="file" class="custom-file-input " required />
+    <div class="custom-file mb-3" style="width: 400px;">
+      <input type="file" name="file" class="custom-file-input" required />
       <label class="custom-file-label" for="validatedCustomFile"
-        >Datei wählen...</label>
-        <label class="custom-file-label" for="validatedCustomFile"
-        >Datei wählen...</label>
-      
+        >Datei wählen...</label
+      >
+      <label class="custom-file-label" for="validatedCustomFile"
+        >Datei wählen...</label
+      >
+
       <div class="invalid-feedback">ungültige Eingabe</div>
     </div>
     <br />
@@ -27,9 +29,11 @@ Dateien-Index {% endblock %} {% block content %}
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Hochgeladen am:</th>
-      <th scope="col">Download</th>
+      <th scope="col">name</th>
+      <th scope="col">zuletzt geändert</th>
+      <th scope="col">
+        mehr
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -40,9 +44,27 @@ Dateien-Index {% endblock %} {% block content %}
       </td>
       <td>{{ datei.uploaded }}</td>
       <td>
-        <a name="" id="" class="btn btn-outline-primary" href="{{datei.datei.url}}"
-          >DOWNLOAD</a
-        >
+        <div class="dropdown">
+          <button
+            class="btn btn-light"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              style="font-size: 17px;"
+            ></ion-icon>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{ datei.datei.url }}">Download</a>
+            <a class="dropdown-item" href="/storage/delete/{{ datei.id }}/"
+              >Löschen</a
+            >
+          </div>
+        </div>
       </td>
     </tr>
     {% endfor %}
