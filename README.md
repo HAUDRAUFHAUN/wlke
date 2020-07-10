@@ -32,4 +32,4 @@ This project is actually in the development stage. This means, that it isn't sui
 
 To use this in production, we highly recommend to use Docker. To build a image, you can find a `Dockerfile` in the `wlke` folder; simpy navigate with your terminal in this folder and build with `docker build .` your image for docker.
 
-#### Attention: you have to install docker on your machine to make this work! Also we recommend to turn debug of at `settings.py` before use this for productio!
+#### Attention: you have to install docker on your machine to make this work! Also we recommend to turn debug of at `settings.py` before use this for production!
