@@ -1,5 +1,7 @@
 # wlke
 
+![](https://raw.githubusercontent.com/HAUDRAUFHAUN/wlke/master/wlke/media/logo/Logo.png?token=ALLNLZKTALSXRHNAY5R5XRK7CWLOC)
+
 wlke (cloud = wolke in german) is a Python Django created Cloud solution for self-hosting. In this Project we want to improof our python - django skills.
 
 ## tools
