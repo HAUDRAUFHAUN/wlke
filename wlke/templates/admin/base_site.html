@@ -1,0 +1,35 @@
+{% extends "admin/base.html" %}
+<html lang="de">
+
+{% block title %}wlke - Administration{% endblock %}
+{% block extrahead %}<link rel="icon" type="image/favicon.ico" href="/media/images/logo/logo.png">{% endblock %}
+
+<!-- Ändert Namen in der Navbar -->
+{% block branding %}
+<h1 id="site-name">Wlke-Administration</h1>
+{% endblock %}
+s
+<!-- Nutzer-Begrüßung Übersetzung -->
+{% block welcome-msg %}
+                Willkommen,
+                <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+{% endblock %}
+
+<!-- Toolbar oben rechts Übersetzung -->
+{% block userlinks %}
+                {% if site_url %}
+                    <a href="{{ site_url }}">Website aufrufen</a> /
+                {% endif %}
+                {% if user.is_active and user.is_staff %}
+                    {% url 'django-admindocs-docroot' as docsroot %}
+                    {% if docsroot %}
+                        <a href="{{ docsroot }}">Dokumentation</a> /
+                    {% endif %}
+                {% endif %}
+                {% if user.has_usable_password %}
+                <a href="{% url 'admin:password_change' %}">Passwort ändern</a> /
+                {% endif %}
+                <a href="{% url 'admin:logout' %}">Abmelden</a>
+            {% endblock %}
+
+{% block nav-global %}{% endblock %}
