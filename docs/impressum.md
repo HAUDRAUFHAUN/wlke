@@ -1,5 +1,5 @@
 ---
-permalink: /wlke/impressum/
+permalink: /wlke/impressum
 title: "impressum"
 ---
 
