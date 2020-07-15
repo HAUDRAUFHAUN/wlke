@@ -2,3 +2,5 @@
 /.idea
 /env
 /wlke/.vscode
+__pycache__
+*.pyc
