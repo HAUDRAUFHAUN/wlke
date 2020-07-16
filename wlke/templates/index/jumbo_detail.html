@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load markdown_extras %}
 {% block content %}
 <div class="container">
 <h1 class="display-4">{{ jumbo_data.titel }}</h1>
 <p class="lead">{{jumbo_data.untertitel}}</p>
 <br>
-<p>{{jumbo_data.inhalt | linebreaks }}</p>
+<p>{{jumbo_data.inhalt | markdown | safe }}</p>
 </div>
 {% endblock %}
