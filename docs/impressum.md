@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "impressum"
+permalink: /wlke/impressum7
 ---
 
 # Impressum
