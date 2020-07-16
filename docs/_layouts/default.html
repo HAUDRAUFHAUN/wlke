@@ -12,14 +12,13 @@
       integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
       crossorigin="anonymous"
     />
-
-    <title>wlke | {{ page.titel }}</title>
+    <link rel="icon" type="" href="https://raw.githubusercontent.com/HAUDRAUFHAUN/wlke/master/wlke/media/logo/Logo.png">
+    <title>wlke | {{ content.title }}</title>
   </head>
   <body>
     {% include _nav.html %}
     <br />
     <div class="container m-4 p-2">
-      <h1 class="display-3">{{ page.titel }}</h1>
       <br />
       {{ content }}
     </div>
