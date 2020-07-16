@@ -4,4 +4,3 @@
 /wlke/.vscode
 */__pycache__
 *.pyc
-*.sqlite3
