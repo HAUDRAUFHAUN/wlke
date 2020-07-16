@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .models import Jumbo
+from .models import Impressum
 
 # Create your views here.
 
@@ -17,4 +18,6 @@ def jumbo_detail(request, jumbo_id):
     return render(request, 'index/jumbo_detail.html', frontend_stuff)
 
 def impressum(request):
-    return render(request, "index/impressum.html")
+    impressum_data = Impressum.objects.all().filter(id=1)
+    data = {"impressum_data": impressum_data}
+    return render(request, "index/impressum.html", data)

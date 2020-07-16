@@ -10,3 +10,9 @@ class Jumbo(models.Model):
 
     def __str__(self):
         return '{}'.format(self.titel)
+
+class Impressum(models.Model):
+    title = models.CharField(default="Impresssum", max_length=50, editable=False)
+    content = models.TextField(default="Impressum fehlt!! kontaktieren sie bitte den Systemadministrator!!")
+    def __str__(self):
+        return '{}'.format(self.title)
