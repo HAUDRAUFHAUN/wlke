@@ -1,16 +1,23 @@
-FROM python:3.8.3-alpine
+FROM python:3.8.3
+LABEL maintainer="haudraufhaun"
 
+ENV PYTHONBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN apk update \
-    && apk add -f  \
-    postgresql-client \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y apt-utils 
 
-WORKDIR /usr/src/app
-COPY requirements.txt ./
+RUN mkdir /code
+
+WORKDIR /code
+
+COPY ./requirements.txt /code/
+
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-COPY . .
 
-EXPOSE 8000
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN pip install -r ./requirements.txt
+
+COPY . /code/
+
+RUN apt-get update &&  apt-get install -y netcat
+ 
+ENTRYPOINT ["/code/entrypoint.sh"]
